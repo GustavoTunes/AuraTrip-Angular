@@ -7,6 +7,12 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './auth.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { PostarComponent } from './postar/postar.component';
+import { HomeComponent } from './home/home.component';
+import { EntrarComponent } from './entrar/entrar.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   imports: [
@@ -26,8 +32,24 @@ import { AuthService } from './auth.service';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
   ],
-  declarations: [RootComponent],
-  bootstrap: [RootComponent],
+  declarations: [
+    RootComponent,
+    HeaderComponent,
+    FooterComponent,
+    PostarComponent,
+    HomeComponent,
+    EntrarComponent,
+    ContatoComponent,
+  ],
+  bootstrap: [
+    RootComponent,
+    HeaderComponent,
+    FooterComponent,
+    PostarComponent,
+    HomeComponent,
+    EntrarComponent,
+    ContatoComponent,
+  ],
   providers: [AuthService],
 })
 export class AppModule {}
