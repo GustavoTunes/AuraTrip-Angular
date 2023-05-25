@@ -1,54 +1,122 @@
-<h1>Angular OnFire🔥</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://auratrip.com.br/" />
+    <meta property="og:title" content="Auratrip - TCC Fatec Rubens Lara" />
+    <meta property="og:site_name" content="Auratrip" />
+    <meta
+      property="og:description"
+      content="Auratrip - Planejamento de viagens e Informações sobre lugares"
+    />
 
-<div *ngIf="!auth.user">
-  <form>
-    <fieldset>
-      <legend>Login</legend>
-      <div>Email</div>
-      <input type="text" name="email" [(ngModel)]="email" />
-      <div>Senha</div>
-      <input type="password" name="password" [(ngModel)]="password" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:alt" content="Logo Auratrip" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="400" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Auratrip - TCC Fatec Rubens Lara." />
+    <!-- google site verification -->
+    <meta
+      name="google-site-verification"
+      content="z_lH9tH0wbjtMz-3Gxh-qzwu25t_HTu6qWTVMIgMeiQ"
+    />
+    <title>Auratrip</title>
+    <link rel="icon" href="assets/iconpngauratrip.png" />
+  </head>
+
+  <body>
+    <a href="#home" class="skip-to-main-content-link"
+      >Saltar para o conteúdo principal</a
+    >
+    <header id="main" class="style_header">
+      <div class="container_header">
+        <a href="index.html">
+          <img
+            class="logo_img"
+            src="https://ik.imagekit.io/gdow8exdy/auratrip-colored-png.png"
+            width="30"
+            height="30"
+            alt="logo"
+          />
+        </a>
+        <ul class="buttons" id="home" style="margin-bottom: 0;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="postar.html">Postar</a></li>
+          <li><a href="#">Roteiros</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="pesquisabutton">
+        <form id="pesquisando" action="norway.html">
+          <input
+            type="text"
+            name="Barra de pesquisa"
+            placeholder="Pesquise aqui:"
+            id="search"
+          />
+          <input type="submit" value="Buscar" id="buscar" />
+        </form>
+      </div>
+    </header>
+
+    <h1>Angular OnFire🔥</h1>
+
+    <div *ngIf="!auth.user">
+      <form>
+        <fieldset>
+          <legend>Login</legend>
+          <div>Email</div>
+          <input type="text" name="email" [(ngModel)]="email" />
+          <div>Senha</div>
+          <input type="password" name="password" [(ngModel)]="password" />
+          <hr />
+          <button (click)="auth.emailSignin(this.email, this.password)">
+            Login with e-mail
+          </button>
+          |
+          <button (click)="auth.googleSignin()">Login with Google</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div *ngIf="auth.error" style="color: red">
+      {{ auth.error }}
+    </div>
+    <div *ngIf="auth.user">
+      Logged as <b>{{ auth.user.email }}</b> |
+      <button (click)="auth.signOut()">Exit</button>
       <hr />
-      <button (click)="auth.emailSignin(this.email, this.password)">
-        Login with e-mail
-      </button>
-      |
-      <button (click)="auth.googleSignin()">Login with Google</button>
-    </fieldset>
-  </form>
-</div>
 
-<div *ngIf="auth.error" style="color: red">
-  {{ auth.error }}
-</div>
-<div *ngIf="auth.user">
-  Logged as <b>{{ auth.user.email }}</b> |
-  <button (click)="auth.signOut()">Exit</button>
-  <hr />
-
-  <h2>Firebase list</h2>
-  <hr />
-  <div>Name:</div>
-  <div><input [(ngModel)]="formNewName" /></div>
-  <div>Age:</div>
-  <div><input type="number" [(ngModel)]="formNewAge" /></div>
-  <br />
-  <button (click)="addItem()">Adicionar</button>
-  <hr />
-  <table border="1">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th>Commmand</th>
-    </tr>
-    <tr *ngFor="let item of list | async">
-      <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
-      <td>{{ item.age }}</td>
-      <td>{{ item.email }}</td>
-      <td>
-        <button (click)="deleteItem(item.key)">Remove</button>
-      </td>
-    </tr>
-  </table>
-</div>
+      <h2>Firebase list</h2>
+      <hr />
+      <div>Name:</div>
+      <div><input [(ngModel)]="formNewName" /></div>
+      <div>Age:</div>
+      <div><input type="number" [(ngModel)]="formNewAge" /></div>
+      <br />
+      <button (click)="addItem()">Adicionar</button>
+      <hr />
+      <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Commmand</th>
+        </tr>
+        <tr *ngFor="let item of list | async">
+          <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.email }}</td>
+          <td>
+            <button (click)="deleteItem(item.key)">Remove</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
