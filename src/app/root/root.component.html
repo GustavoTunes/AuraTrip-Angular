@@ -62,18 +62,27 @@
           <input type="submit" value="Buscar" id="buscar" />
         </form>
       </div>
+      <h1 class="title_animation" style="margin-top: 100px;">AuraTrip</h1>
     </header>
 
-    <h1>Angular OnFire🔥</h1>
+    <h1 class="title_h1">Angular OnFire🔥</h1>
 
-    <div *ngIf="!auth.user">
+    <div
+      class="login_style"
+      *ngIf="!auth.user"
+      style="max-width: 50%; margin: auto;"
+    >
       <form>
         <fieldset>
           <legend>Login</legend>
-          <div>Email</div>
-          <input type="text" name="email" [(ngModel)]="email" />
-          <div>Senha</div>
-          <input type="password" name="password" [(ngModel)]="password" />
+          <div class="form-group">
+            <label>E-mail:</label>
+            <input type="text" name="email" [(ngModel)]="email" />
+          </div>
+          <div class="form-group">
+            <label>Senha:</label>
+            <input type="password" name="password" [(ngModel)]="password" />
+          </div>
           <hr />
           <button (click)="auth.emailSignin(this.email, this.password)">
             Login with e-mail
@@ -118,6 +127,35 @@
         </tr>
       </table>
     </div>
+
+    <footer>
+      <h2 class="teste">AuraTrip</h2>
+      <h3 class="teste">Siga-nos em nossas redes sociais</h3>
+
+      <p>
+        <a title="Facebook Auratrip" href="https://facebook.com" target="_blank"
+          >Facebook</a
+        >
+        <a
+          title="Instagram Auratrip"
+          href="https://instagram.com/auratrip_"
+          target="_blank"
+          >Instagram</a
+        >
+        <a title="Tiktok Auratrip" href="https://tiktok.com" target="_blank"
+          >TikTok</a
+        >
+      </p>
+    </footer>
+    <div class="copyright">
+      <p>&copy; Auratrip - Todos os Direitos Reservados</p>
+    </div>
+    <!-- <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html> -->
+    <!--testando-->
   </body>
 </html>
-<!--testando-->>

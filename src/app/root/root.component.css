@@ -41,7 +41,7 @@
 }
 
 #main {
-  background-image: url('https://ik.imagekit.io/gdow8exdy/images/reynisfjara.png');
+  background-image: url('https://res.cloudinary.com/dlsuopwkn/image/upload/v1685759097/auratrip_jnv32f.jpg');
 }
 
 #norway {
@@ -50,6 +50,29 @@
 
 #iceland_contact {
   background-image: url('https://res.cloudinary.com/dlsuopwkn/image/upload/v1672442180/Reynisfjara_tjrp7n.jpg');
+}
+
+.title_animation {
+  font-size: 178px;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideIn 3s forwards;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+  user-select: none;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* banner texto título efeito https://www.youtube.com/watch?v=rc50owRPdUI&pp=ygUVc3R5bGUgY3NzIHRleHQgYmFubmVy */
@@ -140,4 +163,112 @@ header .logo_img {
   cursor: pointer;
   outline: none;
   border: none;
+}
+
+/* login */
+
+.title_h1 {
+  text-align: center;
+}
+
+.login-style {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+fieldset {
+  border: 2px solid #03ab99;
+  background-color: #f3fafa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #12528a;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button + span {
+  margin: 0 10px;
+}
+
+/* footer */
+
+footer {
+  background: #022928;
+  padding: 30px 80px;
+  color: #f3fafa;
+  border-top: 5px solid #03ab99;
+}
+
+footer p,
+.teste {
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+}
+
+footer p a {
+  color: #fff;
+  text-decoration: none;
+  margin: 15px;
+}
+
+/* section copyright */
+
+.copyright {
+  border-top: 1px solid #03ab99;
+}
+
+.copyright,
+.copyright p {
+  background: #272a2f;
+  padding: 2px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
 }
