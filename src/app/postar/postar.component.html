@@ -1,0 +1,13 @@
+<button class="custom-file-upload" (click)="fileInput.click()">
+  <span>Selecione a imagem</span>
+</button>
+<input
+  #fileInput
+  id="fileInput"
+  type="file"
+  (change)="onFileChange($event)"
+  hidden
+/>
+<p *ngIf="selectedFile">{{ selectedFile.name }}</p>
+<br />
+<button (click)="confirmFile()">Confirmar</button>
